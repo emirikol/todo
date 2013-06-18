@@ -12,7 +12,7 @@ $( ()->
         $.each(d, (i, note)->
           $('#todo-list').prepend(HandlebarsTemplates['todos/todo'](note))
         )
-
+        $('[data-done="done"]').addClass('done')
     )
 
   $('#new_note').submit( (e)->
@@ -29,5 +29,22 @@ $( ()->
         console.info(d)
     )
     e.preventDefault()
+  )
+
+  $('#todo-list').on('click','input[type="checkbox"]', ()->
+    done = !!this.checked
+    item = $(this).parents('.note')
+    $.ajax(
+      method: 'PUT',
+      url: "/notes/#{item.data('id')}",
+      data: {note: {done:  done  }  },
+      success: ()=>
+        if done
+          item.addClass('done')
+        else
+          item.removeClass('done')
+        console.info('foo')
+    )
+
   )
 )

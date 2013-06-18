@@ -5,6 +5,11 @@
 
 .note {
   position: relative;
+  &.done {
+    b, p {
+      text-decoration: line-through;
+    }
+  }
   .time {
     position: absolute;
     top: 0;

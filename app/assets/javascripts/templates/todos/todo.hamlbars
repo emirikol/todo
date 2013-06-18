@@ -1,4 +1,4 @@
-.row-fluid.clearfix.note{data: {done: '{{done}}'}}
+.row-fluid.clearfix.note{data: { id: '{{id}}', done: "{{#if done}}done{{else}}x{{/if}}"}, class: '' }
   .span1
     {{#if done}}
     %input{type: 'checkbox', checked: true }
