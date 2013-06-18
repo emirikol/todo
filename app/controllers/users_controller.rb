@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def new
-    puts session[:user].inspect
     redirect_to notes_path if current_user
     @user = User.new
   end
