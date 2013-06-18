@@ -1,0 +1,9 @@
+.row-fluid
+  .span12
+    %h2
+      Sign in using your email address
+.row-fluid
+  .span12
+    = bootstrap_form_for(@user, html: {class: 'form-inline'}) do |f|
+      = f.email_field :email, placeholder: 'email'
+      = f.submit('Sign In', class: 'btn btn-primary')

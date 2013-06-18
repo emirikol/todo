@@ -34,6 +34,7 @@ end
 
 gem 'jquery-rails'
 gem 'acts_as_list'
+gem 'bootstrap_form_helper'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -43,7 +44,7 @@ gem 'acts_as_list'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-#gem 'thin', group: :development
+gem 'thin', group: :development
 
 # Deploy with Capistrano
 # gem 'capistrano'

@@ -1,0 +1,15 @@
+.row-fluid
+  .span10.offset2
+    %h2
+      My Todos
+.row-fluid
+  .span8.offset2
+    = bootstrap_form_for(Note.new, html: {class: 'form-inline'}) do |f|
+      %input.span3{type: 'text', name: 'note[title]', placeholder: 'title', required: true}
+      %input.span5{type: 'text', name: 'note[description]', placeholder: 'description'}
+      %input.span3{type: 'date', name: 'note[due]', placeholder: 'due'}
+      %span1
+        %button.btn.btn-primary Save
+.row-fluid
+  .span8.offset2
+    .well.clearfix#todo-list

@@ -5,6 +5,7 @@ class NotesController < ApplicationController
   def create
     @note = params[:id] ? Note.find(params[:id]) : Note.new
     @note.attributes = params[:note]
+    @note.user = current_user
     valid = @note.save
     render json: @note, status: (valid ? 200 : 422)
   end
