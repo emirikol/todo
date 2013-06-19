@@ -13,7 +13,7 @@ $( ()->
       success: (d)->
         $('#todo-list').html('')
         $.each(d, (i, note)->
-          note.editable = true
+          note.editable = editable
           $('#todo-list').prepend(HandlebarsTemplates['todos/todo'](note))
         )
         $('[data-done="done"]').addClass('done')
