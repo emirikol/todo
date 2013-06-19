@@ -5,15 +5,31 @@
 
 
 $( ()->
-  if $('#todo-list').length == 1
+
+  get_notes = (editable = true, data = {})->
     $.ajax(
       url: '/notes.json',
+      data: data,
       success: (d)->
+        $('#todo-list').html('')
         $.each(d, (i, note)->
+          note.editable = true
           $('#todo-list').prepend(HandlebarsTemplates['todos/todo'](note))
         )
         $('[data-done="done"]').addClass('done')
     )
+
+  if $('#todo-list').length == 1
+    get_notes()
+
+    $('#public').click( ()->
+      get_notes(false, {filter: 'all'})
+    )
+    $('#private').click( ()->
+      get_notes()
+    )
+
+
 
   $('#new_note').submit( (e)->
     foo = new FormData(this)

@@ -1,4 +1,5 @@
 Todo::Application.routes.draw do
+
   resources :notes
 
 

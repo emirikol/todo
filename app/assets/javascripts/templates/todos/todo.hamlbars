@@ -1,11 +1,16 @@
 .row-fluid.clearfix.note{data: { id: '{{id}}', done: "{{#if done}}done{{else}}x{{/if}}"}, class: '' }
   .span1
+    {{#if editable}}
     {{#if done}}
     %input{type: 'checkbox', checked: true }
     {{else}}
     %input{type: 'checkbox', checked: false }
     {{/if}}
+    {{/if}}
   .span11
     %b {{title}}
     .time {{ due }}
+    .public
+      {{#if public }} public {{ else }} private {{/if}}
+
     %p {{ description }}

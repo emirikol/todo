@@ -12,5 +12,11 @@
         .container
           %a.brand
             Todo
+          %ul.nav
+            %li
+              %a#public{href: '#'} Public Todos
+          %ul.nav
+            %li
+              %a#private{href: '#'} My Todos
     .container
       = yield

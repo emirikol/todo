@@ -9,6 +9,9 @@
       %input.span5{type: 'text', name: 'note[description]', placeholder: 'description'}
       %input.span3{type: 'date', name: 'note[due]', placeholder: 'due'}
       %span1
+        %label{for: 'note_public', title: 'all'}
+          %input#note_public{type: 'checkbox', name: 'note[public]'}
+          %i.icon-share
         %button.btn.btn-primary Save
 .row-fluid
   .span8.offset2
